@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mudaTexto"
+            type="com.example.primeira.viewmodel.MainActivityViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/EngButton"
+            android:layout_width="124dp"
+            android:layout_height="69dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="@{()->mudaTexto.Ingles()}"
+            android:text="Ingles"
+            app:layout_constraintBottom_toTopOf="@+id/FranButton"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/FranButton"
+            android:layout_width="124dp"
+            android:layout_height="69dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginBottom="156dp"
+            android:onClick="@{()->mudaTexto.Frances()}"
+            android:text="Francês"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/Ptbutton"
+            android:layout_width="124dp"
+            android:layout_height="69dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="@{()->mudaTexto.Potugues()}"
+            android:text="Português"
+            app:layout_constraintBottom_toTopOf="@+id/EspButton"
+            app:layout_constraintEnd_toStartOf="@+id/EngButton"
+            app:layout_constraintHorizontal_bias="0.699"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/olaView"
+            android:layout_width="183dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="208dp"
+            android:gravity="center"
+            android:text="@{mudaTexto.texto}"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/EspButton"
+            android:layout_width="124dp"
+            android:layout_height="69dp"
+            android:layout_marginBottom="156dp"
+            android:onClick="@{()->mudaTexto.Espanhol()}"
+            android:text="Espanhol"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/FranButton"
+            app:layout_constraintHorizontal_bias="0.705"
+            app:layout_constraintStart_toStartOf="parent"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
